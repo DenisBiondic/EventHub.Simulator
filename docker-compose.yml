@@ -7,11 +7,17 @@ services:
       context: .
       dockerfile: EventHub.Simulator.Writer/Dockerfile
     environment:
-     - SIMULATOR_EVENT_HUB_CONNECTION_STRING=${SIMULATOR_EVENT_HUB_CONNECTION_STRING}
+     - EVENT_HUB_WRITER_CONNECTION_STRING=${EVENT_HUB_WRITER_CONNECTION_STRING}
 
   eventhub.simulator.reader:
     image: ${DOCKER_REGISTRY-}eventhub-simulator-reader
     build:
       context: .
       dockerfile: EventHub.Simulator.Reader/Dockerfile
+    environment:
+     - EVENT_HUB_READER_CONNECTION_STRING=${EVENT_HUB_READER_CONNECTION_STRING}
+     - EVENT_HUB_READER_PATH=${EVENT_HUB_READER_PATH}
+     - STORAGE_ACCOUNT_NAME=${STORAGE_ACCOUNT_NAME}
+     - STORAGE_ACCOUNT_KEY=${STORAGE_ACCOUNT_KEY}
+     - STORAGE_CONTAINER_NAME=${STORAGE_CONTAINER_NAME}
 

@@ -25,7 +25,7 @@ namespace EventHub.Simulator.Writer
                 .AddEnvironmentVariables();
             var configuration = builder.Build();
 
-            var connectionString = configuration["SIMULATOR_EVENT_HUB_CONNECTION_STRING"];
+            var connectionString = configuration["EVENT_HUB_WRITER_CONNECTION_STRING"];
             var connectionStringBuilder = new EventHubsConnectionStringBuilder(connectionString);
 
             _client = EventHubClient.CreateFromConnectionString(connectionStringBuilder.ToString());
