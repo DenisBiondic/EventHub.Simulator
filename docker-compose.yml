@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  eventhub.simulator.writer:
+    image: ${DOCKER_REGISTRY-}eventhub-simulator-writer
+    build:
+      context: .
+      dockerfile: EventHub.Simulator.Writer/Dockerfile
+    environment:
+     - SIMULATOR_EVENT_HUB_CONNECTION_STRING=${SIMULATOR_EVENT_HUB_CONNECTION_STRING}
+
+  eventhub.simulator.reader:
+    image: ${DOCKER_REGISTRY-}eventhub-simulator-reader
+    build:
+      context: .
+      dockerfile: EventHub.Simulator.Reader/Dockerfile
+

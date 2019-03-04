@@ -1,0 +1,13 @@
+.env
+.vs
+bin
+obj
+EventHub.Simulator.Reader/bin
+EventHub.Simulator.Reader/obj
+EventHub.Simulator.Writer/bin
+EventHub.Simulator.Writer/obj
+EventHub.Simulator.Shared/bin
+EventHub.Simulator.Shared/obj
+docker-compose\.dcproj\.user
+
+*.user
